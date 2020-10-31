@@ -26,3 +26,35 @@ Créer un répertoire `server` avec un fichier `package.json` minimal.
 - [Commande `npm init` dans la documentation officielle](https://docs.npmjs.com/cli-commands/init.html)
 - [Section sur package.json dans la documentation officielle](https://docs.npmjs.com/files/package.json)
 
+### Actions
+
+Se placer dans le dossier `server` et taper la commande suivante :
+
+```
+npm init -y
+```
+
+Éventuellement, remplacer la ligne suivante :
+
+```json
+  "name": "server",
+```
+
+par la ligne suivante :
+
+```
+  "name": "fullstack-api",
+```
+
+ou une ligne avec un nom correspondant plus à votre projet. Veillez à ne pas mettre d'espace ni majuscules ni caractères spéciaux.
+
+
+## Étape 3
+
+### Énoncé
+
+Créer une application server minimale (Hello world).
+
+### Ressources
+
+- [Guide "Getting started" dans la documentation officielle de nodejs](https://nodejs.org/en/docs/guides/getting-started-guide/)
