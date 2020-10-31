@@ -58,3 +58,35 @@ Créer une application server minimale (Hello world).
 ### Ressources
 
 - [Guide "Getting started" dans la documentation officielle de nodejs](https://nodejs.org/en/docs/guides/getting-started-guide/)
+
+### Actions
+
+Créer un fichier `index.js` dans le dossier `server` avec ce contenu :
+
+```
+const http = require('http')
+
+const hostname = '127.0.0.1'
+const port = 3000
+
+const server = http.createServer((req, res) => {
+  res.statusCode = 200
+  res.setHeader('Content-Type', 'text/plain')
+  res.end('Hello World')
+})
+
+server.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`)
+})
+```
+
+## Étape 4
+
+### Énoncé
+
+Créer un script `start` pour lancer l'application "Hello World".
+
+### Ressources
+
+- [npm-start dans la documentation officielle](https://docs.npmjs.com/cli/v6/commands/npm-start)
+- [package.json scripts dans la documentation officielle](https://docs.npmjs.com/cli/v6/configuring-npm/package-json#scripts)
