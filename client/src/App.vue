@@ -1,12 +1,12 @@
 <template>
   <div id="nav">
-    <router-link to="/">
+    <router-link :to="{ name: 'Home' }">
       Home
     </router-link> |
-    <router-link to="/currencies">
+    <router-link :to="{ name: 'Currencies' }">
       Currencies
     </router-link> |
-    <router-link to="/about">
+    <router-link :to="{ name: 'About' }">
       About
     </router-link>
   </div>
