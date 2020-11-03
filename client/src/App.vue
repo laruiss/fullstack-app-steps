@@ -3,12 +3,6 @@
     <router-link :to="{ name: 'Home' }">
       Home
     </router-link> |
-    <router-link :to="{ name: 'Bitcoin' }">
-      Bitcoin
-    </router-link> |
-    <router-link :to="{ name: 'Ethereum' }">
-      Ethereum
-    </router-link> |
     <router-link :to="{ name: 'About' }">
       About
     </router-link>

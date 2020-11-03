@@ -1,8 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
 import Currencies from '../views/Currencies.vue'
-import Bitcoin from '../components/Bitcoin.vue'
-import Ethereum from '../components/Ethereum.vue'
 
 const routes = [
   {
@@ -11,21 +9,9 @@ const routes = [
     component: Home,
   },
   {
-    path: '/currencies',
+    path: '/currencies/:slug',
     name: 'Currencies',
     component: Currencies,
-    children: [
-      {
-        path: 'bitcoin',
-        name: 'Bitcoin',
-        component: Bitcoin,
-      },
-      {
-        path: 'ethereum',
-        name: 'Ethereum',
-        component: Ethereum,
-      },
-    ],
   },
   {
     path: '/about',
