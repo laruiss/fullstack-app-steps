@@ -15,16 +15,16 @@ function fetchCMC (path) {
             'x-cmc_pro_api_key': apiKey
         }
     })
-    .then(fetchResponse => {
-        return fetchResponse.json();
-    })
-    .then(responseData => {
-        const errorCode = responseData.status.error_code
-        if (errorCode != 0) {
-            throw new Error(responseData.status.error_message)
-        }
-        return responseData.data
-    })
+        .then(fetchResponse => {
+            return fetchResponse.json();
+        })
+        .then(responseData => {
+            const errorCode = responseData.status.error_code
+            if (errorCode != 0) {
+                throw new Error(responseData.status.error_message)
+            }
+            return responseData.data
+        })
 }
 
 router.get('/', function getRoot(req, res) {
@@ -32,23 +32,23 @@ router.get('/', function getRoot(req, res) {
     const path = '/cryptocurrency/listings/latest'
 
     fetchCMC(path)
-    .then(currencies => {
-        res.json({
-            success: true,
-            currencies: currencies.map(currency => ({
-                id: currency.id,
-                name: currency.name,
-                slug: currency.slug,
-                quote: currency.quote,
-            })),
+        .then(currencies => {
+            res.json({
+                success: true,
+                currencies: currencies.map(currency => ({
+                    id: currency.id,
+                    name: currency.name,
+                    slug: currency.slug,
+                    quote: currency.quote,
+                })),
+            })
         })
-    })
-    .catch(error => {
-        res.json({
-            success: false,
-            message: error.message
+        .catch(error => {
+            res.json({
+                success: false,
+                message: error.message
+            })
         })
-    })
 
     /*
     fetchCMC('/cryptocurrency/listings/latest')
@@ -74,18 +74,18 @@ router.get('/:currencyslug', function getRoot(req, res) {
     const path = '/cryptocurrency/info?slug=' + crypto
 
     fetchCMC(path)
-    .then(crypto => {
-        res.json({
-            success: true,
-            crypto
+        .then(crypto => {
+            res.json({
+                success: true,
+                crypto
+            })
         })
-    })
-    .catch(error => {
-        res.json({
-            success: false,
-            message: error.message
+        .catch(error => {
+            res.json({
+                success: false,
+                message: error.message
+            })
         })
-    })
 })
 
 
