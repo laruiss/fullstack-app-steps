@@ -1,6 +1,11 @@
 <template>
   <div id="nav">
-    <router-link :to="{ name: 'Home' }">
+    <router-link :to="{ name: 'Login' }">
+      Login
+    </router-link> |
+    <router-link
+      :to="{ name: 'Home' }"
+    >
       Home
     </router-link> |
     <router-link :to="{ name: 'About' }">
@@ -9,6 +14,22 @@
   </div>
   <router-view />
 </template>
+
+<script>
+export default {
+  name: 'App',
+
+  data () {
+    return {
+      token: false,
+    }
+  },
+
+  mounted () {
+    this.token = localStorage.getItem('token')
+  },
+}
+</script>
 
 <style>
 #app {

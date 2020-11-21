@@ -10,7 +10,7 @@ dotenv.config()
 
 const port = 4000
 
-app.use(bodyParser.json())
+app.use(bodyParser.json()) // Permet de lire le corps des requêtes, notamment POST, PUT et PATCH
 
 app.use('/api/v1', router)
 
